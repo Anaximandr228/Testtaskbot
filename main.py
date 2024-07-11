@@ -4,10 +4,10 @@ import telebot
 from telebot import types
 from yoomoney import Quickpay
 
-API_TOKEN = '7334986648:AAGWbzglRdACIRcclnO5_xQIByfs3_KvTe8'
+API_TOKEN = ''
 bot = telebot.TeleBot(API_TOKEN)
 
-table_id = '1wxd8Omq-Yvh9RAJhDUkvTWbIjNWCp9qfq6RmBQVbbWM/edit?gid=0#gid=0'
+table_id = ''
 gc = gspread.service_account(filename='testtask-428911-6c0483131d7a.json')
 
 #Выставление счёта и его данных
