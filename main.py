@@ -61,13 +61,15 @@ def check_date(message):
         datetime.datetime.strptime(input_date, date_format)
     except ValueError:
         bot.send_message(message.chat.id, 'дата неверна')
-    return input_date
+    fill_date(message, input_date)
 
 
 # Запись данных в Google таблицу
-def fill_date(date):
+def fill_date(message, date):
     sh = gc.open("гугл_табличка")
     sh.sheet1.update_cell(2, 2, date)
+    bot.send_message(message.chat.id, text='Дата верна')
 
 
 bot.polling(none_stop=True)
+
