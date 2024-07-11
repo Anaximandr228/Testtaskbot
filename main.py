@@ -38,11 +38,11 @@ def start(message):
 # Обработка callback-вызовов
 @bot.callback_query_handler(func=lambda call: True)
 def callback(call):
-    if call.data == 'maps':  # Обработка кнопки отправки изображения
+    if call.data == 'maps':  # Обработка кнопки отправки Яндекс карт
         text = '<a href="https://yandex.ru/maps/-/CDGS6C0F">Ссылка на карты</a>'
         bot.send_message(call.message.chat.id, text, parse_mode='HTML')
 
-    if call.data == 'pay':  # Обработка кнопки отправки изображения
+    if call.data == 'pay':  # Обработка кнопки отправки ссылки на оплату
         pay_url = quickpay.base_url
         pay_text = f'ссылка на оплату:{pay_url}'
         bot.send_message(call.message.chat.id, text=pay_text)
